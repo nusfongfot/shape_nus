@@ -132,7 +132,7 @@ export default function FormPage({}: Props) {
               rules={[
                 { required: true, message: "Please Select your Prefix!" },
               ]}
-              style={{ width: 350 }}
+              style={{ width: 400 }}
             >
               <Select
                 onChange={(e) =>
@@ -184,7 +184,7 @@ export default function FormPage({}: Props) {
               rules={[
                 { required: true, message: "Please input your birthDate!" },
               ]}
-              style={{ width: 350 }}
+              style={{ width: 400 }}
             >
               <DatePicker
                 style={{ width: 180 }}
@@ -204,7 +204,7 @@ export default function FormPage({}: Props) {
                 onChange={(e) =>
                   dispatch(addToForm({ field: "nationality", value: e }))
                 }
-                style={{ width: 350 }}
+                style={{ width: 400 }}
               >
                 <Select.Option value="ไทย">ไทย</Select.Option>
                 <Select.Option value="ลาว">ลาว</Select.Option>
@@ -216,7 +216,7 @@ export default function FormPage({}: Props) {
             label="เลขบัตรประชาชน"
             name="idCard"
             rules={[{ required: true, message: "Please input your id card!" }]}
-            style={{ width: 350 }}
+            style={{ width: 400 }}
           >
             <Input
               style={{ width: 400 }}
@@ -229,7 +229,7 @@ export default function FormPage({}: Props) {
             label="เพศ"
             name="gender"
             rules={[{ required: true, message: "Please input your gender!" }]}
-            style={{ width: 350 }}
+            style={{ width: 400 }}
           >
             <Radio.Group
               onChange={onChangeRadio}
@@ -246,7 +246,7 @@ export default function FormPage({}: Props) {
             label="เบอร์โทรศัพท์"
             name="phone"
             rules={[{ required: true, message: "Please input your phone!" }]}
-            style={{ width: 350 }}
+            style={{ width: 400 }}
           >
             <Input
               style={{ width: 400 }}
@@ -260,7 +260,7 @@ export default function FormPage({}: Props) {
             label="หนังสือเดินทาง"
             name="passport"
             // rules={[{ required: false, message: "Please input your id card!" }]}
-            style={{ width: 350 }}
+            style={{ width: 400 }}
           >
             <Input
               style={{ width: 400 }}
@@ -279,7 +279,7 @@ export default function FormPage({}: Props) {
                   message: "Please input your expectedSalary!",
                 },
               ]}
-              style={{ width: 350 }}
+              style={{ width: 400 }}
             >
               <Input
                 style={{ width: 400 }}

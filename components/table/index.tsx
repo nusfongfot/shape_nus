@@ -1,5 +1,14 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
-import { Form, Input, InputNumber, Popconfirm, Table, Typography } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  InputNumber,
+  Popconfirm,
+  Row,
+  Table,
+  Typography,
+} from "antd";
 
 type Props = {
   setSelectedRows: Dispatch<SetStateAction<any[]>>;
@@ -126,6 +135,11 @@ export default function TableForm({
     },
   };
 
+  const handleDeleteRow = (key: string) => {
+    const remove = datas.filter((item) => item.key !== key);
+    setDatas(remove);
+  };
+
   const columns = [
     {
       title: "ชื่อ",
@@ -178,12 +192,20 @@ export default function TableForm({
             </Popconfirm>
           </span>
         ) : (
-          <Typography.Link
-            disabled={editingKey !== ""}
-            onClick={() => edit(record)}
-          >
-            Edit
-          </Typography.Link>
+          <Row justify={"space-between"}>
+            <Typography.Link
+              disabled={editingKey !== ""}
+              onClick={() => edit(record)}
+            >
+              Edit
+            </Typography.Link>
+            <Typography.Link
+              style={{ color: "red" }}
+              onClick={() => handleDeleteRow(record.key)}
+            >
+              Delete
+            </Typography.Link>
+          </Row>
         );
       },
     },

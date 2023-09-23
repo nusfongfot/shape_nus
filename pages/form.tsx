@@ -310,7 +310,7 @@ export default function FormPage({}: Props) {
       </Row>
 
       <div style={{ margin: 30 }}>
-        {selectedRows.length !== 0 && (
+        {selectedRows.length > 2 && (
           <Button
             type="primary"
             style={{ background: "red", marginBottom: 10 }}

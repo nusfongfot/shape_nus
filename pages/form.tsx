@@ -23,6 +23,7 @@ import { useRouter } from "next/router";
 import { FormEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 
 const TableFormNoSSR = dynamic(() => import("@/components/table"), {
   ssr: false,
@@ -55,7 +56,7 @@ export default function FormPage({}: Props) {
   };
 
   const onFinish = (values: any) => {
-    const newData = { ...formReducer, key: datas.length + 1 };
+    const newData = { ...formReducer, key: uuidv4() };
     setDatas([{ ...newData }, ...datas]);
     Object.keys(initialValues).forEach((field) => {
       form.setFieldsValue({

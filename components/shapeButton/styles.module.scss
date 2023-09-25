@@ -1,72 +1,72 @@
 .triangle_left {
   width: 0;
   height: 0;
-  border-top: 25px solid transparent;
-  border-right: 50px solid #555;
-  border-bottom: 25px solid transparent;
+  border-top: 50px solid transparent;
+  border-right: 100px solid #555;
+  border-bottom: 50px solid transparent;
 }
 
 .triangle_right {
   width: 0;
   height: 0;
-  border-top: 25px solid transparent;
-  border-left: 50px solid #555;
-  border-bottom: 25px solid transparent;
+  border-top: 50px solid transparent;
+  border-left: 100px solid #555;
+  border-bottom: 50px solid transparent;
 }
 
 .triangl_down {
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 50px solid #555;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid #555;
 }
 
 .triangle_up {
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid #555;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #555;
 }
 
 .trapezoid {
-  border-bottom: 50px solid #555;
+  border-bottom: 100px solid #555;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   height: 0;
-  width: 125px;
+  width: 150px;
 }
 
 .rectangle {
-  height: 50px;
-  width: 100px;
+  height: 100px;
+  width: 180px;
   background-color: #555;
 }
 
 .parallelogram {
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: 100px;
   transform: skew(20deg);
   background: #555;
 }
 
 .square {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   background-color: #555;
 }
 
 .circle {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   background-color: #555;
   border-radius: 50%;
 }
 
 .oval {
-  height: 50px;
-  width: 100px;
+  height: 100px;
+  width: 150px;
   background-color: #555;
   border-radius: 50%;
 }

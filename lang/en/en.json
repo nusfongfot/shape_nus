@@ -3,6 +3,7 @@
   "layout": "Lay Out One",
   "project2": "project2",
   "back": "back",
-  "form":"Form"
-
+  "form": "Form",
+  "move_shape": "Move shape",
+  "move_position": "Move position"
 }

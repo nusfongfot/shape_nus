@@ -72,8 +72,25 @@
 }
 
 .card_inside {
+  position: relative;
   &:hover {
     background-color: #ffa200;
     cursor: pointer;
   }
+}
+
+.sub_title {
+  background-color: rgba(110, 218, 120, 1);
+  color: white;
+  height: 30px;
+  width: 110px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: 0 auto;
+  bottom: -20px;
+  left: 0;
+  right: 0;
 }

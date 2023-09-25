@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Col, Row, Select } from "antd";
+import { Button, Card, Col, Divider, Row, Select } from "antd";
 import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
@@ -26,7 +26,7 @@ export default function ShapeButton({}: Props) {
     const moveToTop = datas.splice(3, 5);
     setDatas([...moveToTop, ...datas]);
   };
-  const handleClickUp = () => {
+  const handleMovePosition = () => {
     const moveToDown = datas.splice(0, 3);
     setDatas([...datas, ...moveToDown]);
   };
@@ -38,10 +38,10 @@ export default function ShapeButton({}: Props) {
   };
 
   const button = [
-    { title: "triangle_left", fn: randomClickIndex },
-    { title: "triangle_up", fn: handleClickUp },
-    { title: "triangl_down", fn: handleClicDown },
-    { title: "triangle_right", fn: randomClickIndex },
+    { title: "triangle_left", fn: randomClickIndex, sub: t("move_shape") },
+    { title: "triangle_up", fn: handleMovePosition, sub: t("move_position") },
+    // { title: "triangl_down", fn: handleClicDown, sub: t("move_position") },
+    { title: "triangle_right", fn: randomClickIndex, sub: t("move_shape") },
   ];
   return (
     <div>
@@ -67,20 +67,33 @@ export default function ShapeButton({}: Props) {
             <Card
               bordered={false}
               style={{
-                width: 150,
+                width: item.title === "triangle_up" ? 350 : 150,
                 marginTop: 30,
-                display: "flex",
+                display: item.title === "triangle_up" ? "block" : "flex",
                 justifyContent: "center",
               }}
               className={styles.card_inside}
               onClick={item.fn}
             >
-              <div className={`${styles[item.title]}`} />
+              {item.title !== "triangle_up" && (
+                <div className={`${styles[item.title]}`} />
+              )}
+              {item.title === "triangle_up" && (
+                <Row justify={"space-around"}>
+                  <div
+                    className={
+                      item.title == "triangle_up" ? `${styles[item.title]}` : ""
+                    }
+                  />
+                  <div className={styles.triangl_down} />
+                </Row>
+              )}
+              <div className={styles.sub_title}>{item.sub}</div>
             </Card>
           </Col>
         ))}
       </Row>
-
+      <Divider style={{ marginTop: 50 }} />
       <Row justify={"end"}>
         {datas.map((item, index) => (
           <Col span={7} key={item.id}>

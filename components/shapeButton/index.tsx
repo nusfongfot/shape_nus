@@ -67,7 +67,7 @@ export default function ShapeButton({}: Props) {
             <Card
               bordered={false}
               style={{
-                width: item.title === "triangle_up" ? 400 : 270,
+                width: item.title === "triangle_up" ? 650 : 270,
                 marginTop: 30,
                 display: item.title === "triangle_up" ? "block" : "flex",
                 justifyContent: "center",
